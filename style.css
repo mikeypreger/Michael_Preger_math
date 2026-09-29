@@ -1,0 +1,160 @@
+/* 1. The Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Global Typography & Background */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    
+    /* Removed the heavy white gradient overlay completely */
+    background-image: url('math_equations_background.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: right center; /* Ensures the best part of the image stays visible on the right */
+}
+
+/* 3. Header & Flexbox Navigation */
+header {
+    background-color: #2d6a4f; /* A professional, deep green */
+    color: white;
+    padding: 1.5rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Pushes the name left and links right */
+    align-items: center; /* Vertically centers them */
+}
+
+nav ul {
+    display: flex; /* Turns the vertical list into a horizontal row */
+    list-style: none; /* Removes the bullet points */
+    gap: 2rem; /* Adds space between the links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Removes the standard blue underline */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #cbd5e1; /* Lightens the link when hovered over */
+}
+/* Shift all main content to a column on the left */
+main {
+    max-width: 550px; /* Restricts the width so it doesn't cover the whole screen */
+    margin-left: 5%; /* Puts a small gap between the content and the left edge of the screen */
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* 4. Hero Section (Updated for left-alignment) */
+#hero {
+    text-align: left;
+    padding: 40px;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    color: #2d6a4f;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+#hero button {
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#hero button:hover {
+    background-color: #1b4332;
+}
+
+/* 5. Main Content Styling - Glassmorphism Effect */
+section {
+    padding: 40px; 
+    margin-bottom: 40px; 
+    
+    /* Translucent white background */
+    background-color: rgba(255, 255, 255, 0.85); 
+    
+    /* Blurs the background immediately behind the box so text remains highly readable */
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    
+    border-radius: 12px; 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* Stronger shadow to lift the card off the math */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Gives a subtle glass-edge reflection */
+}
+
+/* Ensure headings inside sections align properly */
+main section h2 {
+    color: #2d6a4f;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #cbd5e1;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#services ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+}
+
+#services ul li {
+    margin-bottom: 10px;
+}
+
+/* 6. Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* 1. Header & Navigation */
+    nav {
+        flex-direction: column; /* Stacks the name and links vertically */
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 2. Main Layout */
+    main {
+        max-width: 100%; /* Allows the cards to span the full width of a phone */
+        margin-left: 0; /* Removes the desktop left-alignment */
+        padding: 15px;
+    }
+
+    /* 3. Glass Cards */
+    section {
+        padding: 25px; /* Shrinks the internal spacing to save screen real estate */
+        margin-bottom: 20px;
+    }
+
+    /* 4. Typography Adjustments */
+    #hero h2 {
+        font-size: 2.2rem; /* Shrinks the massive title so it doesn't break into awkward lines */
+    }
+
+    #hero {
+        padding: 20px;
+    }
+}
